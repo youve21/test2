@@ -19,7 +19,14 @@ export enum LayerType {
     Arrowright,
     Standpr,
     Triangledarrow,
-    Linedarrow
+    Linedarrow,
+    Combin,
+    IdeasRectRaffin,
+    RaffinementColumns,
+    RoundedRect,
+    IdeasRectCombin,
+    PriorityMoscow,
+    IdeasRectMoscow
 };
 
 

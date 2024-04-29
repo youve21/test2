@@ -10,6 +10,14 @@ import { Text } from './Text'
 import { Circle } from './Circle'
 import { Sharpsquare } from './Sharpsquare'
 import { Triangle } from './Triangle'
+import { Combin } from './Combin'
+import { IdeasRectRaffin } from './IdeasRectRaffin'
+import { RaffinementColumns }from './RaffinementColumns'
+import { RoundedRect } from './RoundedRect'
+import { IdeasRectCombin } from './IdeasRectCombin'
+import { PriorityMoscow } from './PriorityMoscow'
+import { IdeasRectMoscow } from './IdeasRectMoscow'
+
 
 const LayerPreview = memo(({id, onLayerPointerDown, selectionColor, hide}) => {
   const layer = useStorage((root) => root.layers.get(id))
@@ -82,6 +90,65 @@ const LayerPreview = memo(({id, onLayerPointerDown, selectionColor, hide}) => {
           selectionColor={selectionColor}
         />
       )
+      case LayerType.Combin:
+        return(
+          <Combin 
+            id={id}
+            layer={layer}
+            onPointerDown={onLayerPointerDown}
+            selectionColor={selectionColor}
+          />
+        )
+      case LayerType.IdeasRectRaffin:
+        return(
+          <IdeasRectRaffin 
+            id={id}
+            layer={layer}
+            onPointerDown={onLayerPointerDown}
+            selectionColor={selectionColor}
+          />
+        )
+      case LayerType.IdeasRectCombin:
+        return(
+          <IdeasRectCombin 
+            id={id}
+            layer={layer}
+            onPointerDown={onLayerPointerDown}
+            selectionColor={selectionColor}
+          />
+        )
+      case LayerType.RaffinementColumns:
+        return(
+          <RaffinementColumns
+            id={id}
+            layer={layer}
+            onPointerDown={onLayerPointerDown}
+          />
+        )
+      case LayerType.RoundedRect:
+        return(
+          <RoundedRect
+            id={id}
+            layer={layer}
+            onPointerDown={onLayerPointerDown}
+          />
+        )
+      case LayerType.PriorityMoscow:
+        return(
+          <PriorityMoscow
+            id={id}
+            layer={layer}
+            onPointerDown={onLayerPointerDown}
+          />
+        )
+      case LayerType.IdeasRectMoscow:
+        return(
+          <IdeasRectMoscow
+            id={id}
+            layer={layer}
+            onPointerDown={onLayerPointerDown}
+          />
+        )
     default:
       console.warn("Unknown layer type")
   }
